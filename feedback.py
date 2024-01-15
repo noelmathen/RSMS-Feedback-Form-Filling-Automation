@@ -21,10 +21,9 @@ def select_feedback_options(driver):
     WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.NAME, "Subject_Code")))
     time.sleep(2)
 
-# Get user input for username and password
+
 username = input("Enter your username: ")
 password = input("Enter your password: ")
-
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 driver.maximize_window()
 driver.get("https://www.rajagiritech.ac.in/stud/ktu/student/")
