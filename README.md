@@ -14,19 +14,6 @@ This Python script uses Selenium to automate the feedback submission process on 
 - Python 3
 - Chrome Browser
 
-## Setup
-
-1. Install the required dependencies:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-2. Run the script:
-
-   ```bash
-   python feedback_automation.py
-   ```
-
 ## Usage
 
 1. Enter your student portal username and password when prompted.
