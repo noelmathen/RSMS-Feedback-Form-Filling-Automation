@@ -2,6 +2,10 @@
 
 This Python script uses Selenium to automate the feedback submission process on the [Rajagiri Tech Student Portal](https://www.rajagiritech.ac.in/stud/ktu/student/). It specifically targets the feedback pages for the 2023 End Semester Feedback ODD.
 
+## Run it yourselves!
+
+- **Feedback_form.ipynb:** This Jupyter Notebook file provides an online platform for running the script. You can execute the code by simply entering their username(uid) and password.
+
 ## Features
 
 - **User Input:** The script prompts the user to enter their username(uid) and password for the student portal.
