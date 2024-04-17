@@ -1,5 +1,11 @@
 {
+    "functions": {
+      "api/**/*.py": {
+        "runtime": "python3.9"
+      }
+    },
     "rewrites": [
-        {"source": "/(.*)", "destination": "/"}
+      { "source": "/(.*)", "destination": "/feedback_project/wsgi.py" }
     ]
-}
+  }
+  
