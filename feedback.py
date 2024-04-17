@@ -32,14 +32,20 @@ username = input("Enter your uid: ")
 password = input("Enter your password: ")
 
 try:
+    print("Logging in to you rsms account...")
     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
     driver.maximize_window()
     driver.get("https://www.rajagiritech.ac.in/stud/ktu/student/")
     driver.find_element(By.NAME, "Userid").send_keys(username)
     driver.find_element(By.NAME, "Password").send_keys(password)
     driver.find_element(By.XPATH, "//input[@type='submit']").click()
-    driver.find_element(By.LINK_TEXT, "2024 Mid Semester Feedback Even").click()
-    time.sleep(2)
+    try:
+        driver.find_element(By.LINK_TEXT, "2024 Mid Semester Feedback Even").click()
+    except NoSuchElementException:
+        print("Incorrect credentials")
+        raise SystemExit
+    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.NAME, "Subject_Code")))
+    print("Successfully logged in...\n")
 
     while True:
         try:
