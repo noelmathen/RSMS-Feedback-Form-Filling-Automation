@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-+0byja%rycg2me7x=wrosn#g)3&asb!c=afjt*m3)9%-#=m551
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://graceful-puce-barnacle.cyclic.app']
 
 
 # Application definition
