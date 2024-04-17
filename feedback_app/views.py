@@ -15,4 +15,4 @@ def feedback_form(request):
     else:
         form = FeedbackForm()
 
-    return render(request, 'feedback_app/feedback_form.html', {'form': form, 'feedback_messages': feedback_messages})
+    return render(request, 'feedback_app/index.html', {'form': form, 'feedback_messages': feedback_messages})
