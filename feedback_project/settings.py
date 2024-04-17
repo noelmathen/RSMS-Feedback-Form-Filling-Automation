@@ -27,6 +27,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['strange-dove-fez.cyclic.app', 'rsms-feedback-form.cyclic.app', '127.0.0.1']
 
+PORT = 3000
 
 # Application definition
 
