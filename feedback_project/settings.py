@@ -25,9 +25,7 @@ SECRET_KEY = 'django-insecure-+0byja%rycg2me7x=wrosn#g)3&asb!c=afjt*m3)9%-#=m551
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['strange-dove-fez.cyclic.app', 'rsms-feedback-form.cyclic.app', '127.0.0.1']
-
-PORT = 3000
+ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1']
 
 # Application definition
 
