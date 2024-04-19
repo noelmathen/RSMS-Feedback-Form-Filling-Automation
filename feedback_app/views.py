@@ -1,18 +1,16 @@
-#views.py
-from django.shortcuts import render
-from .forms import FeedbackForm
+# feedback_app/views.py
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from .serializers import FeedbackSerializer
 from .feedback_script import run_feedback_script
 
-def feedback_form(request):
-    feedback_messages = []
-
-    if request.method == 'POST':
-        form = FeedbackForm(request.POST)
-        if form.is_valid():
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
+class FeedbackAPIView(APIView):
+    def post(self, request, *args, **kwargs):
+        serializer = FeedbackSerializer(data=request.data)
+        if serializer.is_valid():
+            username = serializer.validated_data['username']
+            password = serializer.validated_data['password']
             feedback_messages = run_feedback_script(username, password)
-    else:
-        form = FeedbackForm()
-
-    return render(request, 'feedback_app/index.html', {'form': form, 'feedback_messages': feedback_messages})
+            return Response({'feedback_messages': feedback_messages})
+        else:
+            return Response(serializer.errors, status=400)
