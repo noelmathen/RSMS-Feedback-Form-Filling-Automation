@@ -11,11 +11,11 @@ import time
 def select_feedback_options(driver):
     for question_number in range(1, 18):
         try:
-            radio_name = f"{10904 + question_number}"  
+            radio_name = f"{11005 + question_number}"  
             if question_number in range(1, 16):
                 driver.find_element(By.CSS_SELECTOR, f"input[name='{radio_name}'][value='4']").click()
             elif question_number == 16 or question_number == 17:
-                text_area_name = f"{10904 + question_number}"  
+                text_area_name = f"{11005 + question_number}"  
                 driver.find_element(By.CSS_SELECTOR, f"textarea[name='{text_area_name}']").send_keys('-')
             time.sleep(0.07)
         except NoSuchElementException:
@@ -34,13 +34,13 @@ password = input("Enter your password: ")
 try:
     print("Logging in to you rsms account...")
     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
-    driver.maximize_window()
+    # driver.maximize_window()
     driver.get("https://www.rajagiritech.ac.in/stud/ktu/student/")
     driver.find_element(By.NAME, "Userid").send_keys(username)
     driver.find_element(By.NAME, "Password").send_keys(password)
     driver.find_element(By.XPATH, "//input[@type='submit']").click()
     try:
-        driver.find_element(By.LINK_TEXT, "2024 Mid Semester Feedback Even").click()
+        driver.find_element(By.LINK_TEXT, "2024 END Semester Feedback Even").click()
     except NoSuchElementException:
         print("Incorrect credentials")
         raise SystemExit
